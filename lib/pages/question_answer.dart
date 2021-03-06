@@ -8,12 +8,13 @@ class QuestionAnswerPage extends StatefulWidget {
 
 class _QuestionAnswerPageState extends State<QuestionAnswerPage> {
   // Text editing controller for question text field
-  TextEditingController _questionFieldController = TextEditingController();
+  // TextEditingController _questionFieldController = TextEditingController();
 
   /// Handle the process of getting ayes/no answer
   _handleGetAnswer() async {
     try {
-      http.Response response = await http.get("https://yesno.wtf/api");
+      http.Response response =
+          await http.get(Uri.parse("https://yesno.wtf/api"));
       print(response.body);
     } catch (err, stacktrace) {
       print(err);
